@@ -150,6 +150,12 @@ sup {
   vertical-align: baseline;
 }
 
+.icon {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+}
+
 sub {
   bottom: -.25em;
 }
