@@ -23,11 +23,18 @@ function enableDarkMode() {
 }
 
 const mascotContainer = document.getElementById('mascot-container');
+const mascotMessage = document.getElementById('mascot-message');
+// Check if the mascot has already been shown
+if (!localStorage.getItem('mascotShown')) {
+     // Show the mascot for 3 seconds and then hide it gradually
+     setTimeout(function () {
+          mascotContainer.classList.add('hidden');
+     }, 3000);
 
-// Show the mascot for 3 seconds and then hide it gradually
-setTimeout(function () {
-     mascotContainer.classList.add('hidden');
-}, 3000);
+     // Show the mascot
+     mascotContainer.style.visibility = 'visible';
+     mascotMessage.style.visibility = 'visible';
 
-// Show the mascot
-mascotContainer.style.visibility = 'visible';
+     // Set the flag indicating that the mascot has been shown
+     localStorage.setItem('mascotShown', true);
+}
