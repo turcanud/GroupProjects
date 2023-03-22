@@ -68,15 +68,9 @@ textarea {
      color: var(--text-light-color);
 }
 
-#mascot-image {
-     width: 100px;
-     height: 100px;
-}
-
 #mascot-container {
      position: fixed;
      bottom: 20px;
-     right: 20px;
      width: 100px;
      height: 100px;
      visibility: hidden;
