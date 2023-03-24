@@ -6,9 +6,9 @@
 }
 
 .dark-theme {
-     --nav-bar-light-color: #611C35;
-     --text-light-color: #FFFFFF;
-     --background-light-color: rgba(52,53,65,1);
+    --nav-bar-light-color: #d63384;
+    --text-light-color: #FFFFFF;
+    --background-light-color: rgba(52,53,65,1);
 }
 
 .navbar {
