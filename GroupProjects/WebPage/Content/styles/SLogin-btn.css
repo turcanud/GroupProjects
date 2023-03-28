@@ -3,7 +3,7 @@
      color: var(--text-light-color);
      padding: 10px 20px;
      border-radius: 50px;
-     border: 1px solid #000;
+     border: 1px var(--border-ld-mode);
      font-size: 16px;
      font-weight: bold;
      text-transform: uppercase;

@@ -3,6 +3,7 @@
      --text-light-color: #07070A;
      --background-light-color: #FFFFFF;
      --gradient-btn: linear-gradient(to right, #3498db, #e74c3c);
+     --border-ld-mode: solid #000;
 }
 
 .dark-theme {
@@ -10,4 +11,5 @@
      --text-light-color: #FFFFFF;
      --background-light-color: rgba(52,53,65,1);
      --gradient-btn: linear-gradient(to right, #e74c3c, #3498db);
+     --border-ld-mode: purple;
 }

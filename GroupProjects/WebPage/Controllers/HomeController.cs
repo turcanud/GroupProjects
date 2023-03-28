@@ -34,5 +34,9 @@ namespace WebPage.Controllers
           {
                return View();
           }
+          public ActionResult Id1()
+          {
+               return View();
+          }
      }
 }
