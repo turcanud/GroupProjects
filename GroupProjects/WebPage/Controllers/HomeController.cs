@@ -30,5 +30,9 @@ namespace WebPage.Controllers
           {
                return View();
           }
+          public ActionResult Subscriptions()
+          {
+               return View();
+          }
      }
 }
