@@ -1,0 +1,22 @@
+﻿.login-btn {
+     background: var(--gradient-btn);
+     color: var(--text-light-color);
+     padding: 10px 20px;
+     border-radius: 50px;
+     border: 1px solid #000;
+     font-size: 16px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     transition: all 0.3s ease;
+     cursor: pointer;
+}
+
+     .login-btn:hover {
+          background: linear-gradient(to right, #fc4a1a, #f7b733);
+     }
+
+.login-container {
+     display: flex;
+     justify-content: flex-end;
+}

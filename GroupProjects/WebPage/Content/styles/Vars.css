@@ -1,0 +1,13 @@
+﻿:root {
+     --nav-bar-light-color: #FEFFBE;
+     --text-light-color: #07070A;
+     --background-light-color: #FFFFFF;
+     --gradient-btn: linear-gradient(to right, #3498db, #e74c3c);
+}
+
+.dark-theme {
+     --nav-bar-light-color: #d63384;
+     --text-light-color: #FFFFFF;
+     --background-light-color: rgba(52,53,65,1);
+     --gradient-btn: linear-gradient(to right, #e74c3c, #3498db);
+}
