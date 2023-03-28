@@ -44,6 +44,7 @@ h1 {
      }
 
      .product p {
+          color: darkgreen;
           font-weight: bold;
           margin-bottom: 10px;
      }

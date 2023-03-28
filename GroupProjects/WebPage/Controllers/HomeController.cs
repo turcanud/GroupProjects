@@ -15,15 +15,11 @@ namespace WebPage.Controllers
 
           public ActionResult About()
           {
-               ViewBag.Message = "Your application description page.";
-
                return View();
           }
 
           public ActionResult Contact()
           {
-               ViewBag.Message = "Your contact page.";
-
                return View();
           }
           public ActionResult Shop()
@@ -35,6 +31,14 @@ namespace WebPage.Controllers
                return View();
           }
           public ActionResult Id1()
+          {
+               return View();
+          }
+          public ActionResult Id2()
+          {
+               return View();
+          }
+          public ActionResult Id3()
           {
                return View();
           }

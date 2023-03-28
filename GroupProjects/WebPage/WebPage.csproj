@@ -186,6 +186,8 @@
     <Content Include="Content\img\brightness-and-contrast.png" />
     <Content Include="Content\img\github.png" />
     <Content Include="Content\img\gym-p1.jpg" />
+    <Content Include="Content\img\gym-p2.jpg" />
+    <Content Include="Content\img\gym-p3.jpg" />
     <Content Include="Content\img\moon.png" />
     <Content Include="Content\img\sun.png" />
     <Content Include="Content\img\suny.png" />
@@ -282,6 +284,8 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Subscriptions.cshtml" />
     <Content Include="Views\Home\Id1.cshtml" />
+    <Content Include="Views\Home\Id2.cshtml" />
+    <Content Include="Views\Home\Id3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
