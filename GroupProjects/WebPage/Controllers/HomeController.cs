@@ -26,5 +26,9 @@ namespace WebPage.Controllers
 
                return View();
           }
+          public ActionResult Shop()
+          {
+               return View();
+          }
      }
 }
