@@ -3,12 +3,20 @@
      --nav-bar-light-color: #FEFFBE;
      --text-light-color: #07070A;
      --background-light-color: #FFFFFF;
+     --gradient-btn: linear-gradient(to right, #3498db, #e74c3c);
 }
 
 .dark-theme {
+<<<<<<< Updated upstream
      --nav-bar-light-color: #611C35;
      --text-light-color: #FFFFFF;
      --background-light-color: rgba(52,53,65,1);
+=======
+     --nav-bar-light-color: #d63384;
+     --text-light-color: #FFFFFF;
+     --background-light-color: rgba(52,53,65,1);
+     --gradient-btn: linear-gradient(to right, #e74c3c, #3498db);
+>>>>>>> Stashed changes
 }
 
 .navbar {
@@ -98,4 +106,73 @@ textarea {
      text-align: center;
      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+main {
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
 
+.btn {
+     background-color: #333;
+     color: #fff;
+     padding: 10px 20px;
+     border-radius: 5px;
+     margin-top: 20px;
+}
+
+     .btn:hover {
+          cursor: pointer;
+          background-color: #444;
+     }
+
+.products {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 50px;
+}
+
+.product {
+     background-color: #eee;
+     padding: 20px;
+     border-radius: 5px;
+     text-align: center;
+     flex-basis: 30%;
+}
+
+     .product img {
+          width: 100%;
+          margin-bottom: 20px;
+     }
+
+     .product h2 {
+          margin-bottom: 10px;
+     }
+
+     .product p {
+          font-weight: bold;
+          margin-bottom: 10px;
+     }
+
+.login-btn {
+     background: var(--gradient-btn);
+     color: var(--text-light-color);
+     padding: 10px 20px;
+     border-radius: 50px;
+     border: 1px solid #000;
+     font-size: 16px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     transition: all 0.3s ease;
+     cursor: pointer;
+}
+
+     .login-btn:hover {
+          background: linear-gradient(to right, #fc4a1a, #f7b733);
+     }
+
+.login-container {
+     display: flex;
+     justify-content: flex-end;
+}
