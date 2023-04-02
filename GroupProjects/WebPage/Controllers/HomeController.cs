@@ -42,5 +42,9 @@ namespace WebPage.Controllers
           {
                return View();
           }
+          public ActionResult LoginPage()
+          {
+               return View();
+          }
      }
 }

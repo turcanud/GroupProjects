@@ -38,6 +38,8 @@ namespace WebPage
                          "~/Content/styles/SProducts.css",
                          "~/Content/styles/SVars.css",
                          "~/Content/styles/SMascot.css"));
+               bundles.Add(new StyleBundle("~/Content/logPage/css").Include(
+                         "~/Content/styles/SLoginPage.css"));
           }
      }
 }

@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\background6.jpg" />
     <Content Include="Content\img\brightness-and-contrast.png" />
     <Content Include="Content\img\github.png" />
     <Content Include="Content\img\gym-p1.jpg" />
@@ -191,6 +192,7 @@
     <Content Include="Content\img\moon.png" />
     <Content Include="Content\img\sun.png" />
     <Content Include="Content\img\suny.png" />
+    <Content Include="Content\styles\SLoginPage.css" />
     <Content Include="Content\styles\SMascot.css" />
     <Content Include="Content\styles\SProducts.css" />
     <Content Include="Content\styles\SLogin-btn.css" />
@@ -286,6 +288,7 @@
     <Content Include="Views\Home\Id1.cshtml" />
     <Content Include="Views\Home\Id2.cshtml" />
     <Content Include="Views\Home\Id3.cshtml" />
+    <Content Include="Views\Home\LoginPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
