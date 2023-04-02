@@ -25,7 +25,9 @@
                     </ul>
                     <img src="~/Content/img/brightness-and-contrast.png" id="dark-mode-toggle" />
                     <div class="login-container">
-                         <button class="login-btn">Login/SignUp</button>
+                         <a href="@Url.Action("LoginPage", "Home", new { })">
+                              <button class="login-btn">Login/SignUp</button>
+                         </a>
                     </div>
                </div>
           </div>
