@@ -192,6 +192,7 @@
     <Content Include="Content\img\moon.png" />
     <Content Include="Content\img\sun.png" />
     <Content Include="Content\img\suny.png" />
+    <Content Include="Content\styles\SContactPage.css" />
     <Content Include="Content\styles\SLoginPage.css" />
     <Content Include="Content\styles\SMascot.css" />
     <Content Include="Content\styles\SProducts.css" />

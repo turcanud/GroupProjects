@@ -40,6 +40,8 @@ namespace WebPage
                          "~/Content/styles/SMascot.css"));
                bundles.Add(new StyleBundle("~/Content/logPage/css").Include(
                          "~/Content/styles/SLoginPage.css"));
+               bundles.Add(new StyleBundle("~/Content/contactPage/css").Include(
+                         "~/Content/styles/SContactPage.css"));
           }
      }
 }
