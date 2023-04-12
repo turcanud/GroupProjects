@@ -286,6 +286,11 @@
     <Content Include="Views\Home\Id1.cshtml" />
     <Content Include="Views\Home\Id2.cshtml" />
     <Content Include="Views\Home\Id3.cshtml" />
+<<<<<<< Updated upstream
+=======
+    <Content Include="Views\Home\LoginPage.cshtml" />
+    <Content Include="Views\Home\GymPlaces.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

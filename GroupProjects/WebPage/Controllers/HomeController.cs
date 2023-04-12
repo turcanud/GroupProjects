@@ -42,5 +42,17 @@ namespace WebPage.Controllers
           {
                return View();
           }
+<<<<<<< Updated upstream
+=======
+          public ActionResult LoginPage()
+          {
+               return View();
+          }
+          
+          public ActionResult GymPlaces()
+          {
+               return View();
+          }
+>>>>>>> Stashed changes
      }
 }
