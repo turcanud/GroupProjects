@@ -46,5 +46,9 @@ namespace WebPage.Controllers
           {
                return View();
           }
+          public ActionResult GymPlaces()
+          {
+               return View();
+          }
      }
 }
