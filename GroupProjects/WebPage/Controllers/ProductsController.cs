@@ -9,46 +9,84 @@ namespace WebPage.Controllers
 {
     public class ProductsController : Controller
     {
-        // GET: Products
-        public ActionResult Index()
-        {
-               List<Product> products = new List<Product>()
-               {
-                    new Product(){ProductId = 1, ProductName = "Gum1", Rate = 4.9},
-                    new Product(){ProductId = 2, ProductName = "Gum2", Rate = 4.2},
-                    new Product(){ProductId = 3, ProductName = "Gum3", Rate = 4.5},
-               };
-            return View(products);
-        }
-          public ActionResult Details(int id)
+          public ActionResult Index()
           {
-               List<Product> products = new List<Product>()
-               {
-                    new Product(){ProductId = 1, ProductName = "Gum1", Rate = 4.9},
-                    new Product(){ProductId = 2, ProductName = "Gum2", Rate = 4.2},
-                    new Product(){ProductId = 3, ProductName = "Gum3", Rate = 4.5},
-               };
-               ViewBag.Products = products;
-               Product matchingProduct = null;
-               foreach (var item in products)
-               {
-                    if (item.ProductId == id)
-                    {
-                         matchingProduct = item;
-                    }
-               }
-               return View(matchingProduct);
+               var db = new GymDatabaseEntities();
+               List<GymProduct> products = db.GymProducts.ToList();
+               return View(products);
           }
-
           public ActionResult Create()
           {
                return View();
           }
+          [HttpPost]
+          public ActionResult Create(GymProduct gp)
+          {
+               var db = new GymDatabaseEntities();
+               db.GymProducts.Add(gp);
+               db.SaveChanges();
+               return RedirectToAction("Index");
+          }
+
+          public ActionResult Details(int id)
+          {
+               var db = new GymDatabaseEntities();
+               var products = db.GymProducts.Find(id);
+               return View(products);
+          }
+          public ActionResult Edit(int id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var products = db.GymProducts.Find(id);
+                    if (products != null)
+                    {
+                         return View(products);
+                    }
+                    else
+                    {
+                         // Handle the case where the gym with the specified ID is not found
+                         return RedirectToAction("Index");
+                    }
+               }
+          }
 
           [HttpPost]
-          public ActionResult Create(int ProductId, string ProductName)
+          public ActionResult Edit(GymProduct gp)
           {
-               return View();
+               using (var db = new GymDatabaseEntities())
+               {
+                    var products = db.GymProducts.Find(gp.ProductID);
+                    if (products != null)
+                    {
+                         products.Name = gp.Name;
+                         products.Category = gp.Category;
+                         products.Price = gp.Price;
+                         db.SaveChanges();
+                    }
+               }
+
+               return RedirectToAction("Index");
+          }
+          public ActionResult Delete(int? id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var products = db.GymProducts.Find(id);
+                    return View(products);
+               }
+          }
+
+          [HttpPost]
+          public ActionResult Delete(int id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var products = db.GymProducts.Find(id);
+                    db.GymProducts.Remove(products);
+                    db.SaveChanges();
+               }
+               return RedirectToAction("Index");
           }
      }
 }

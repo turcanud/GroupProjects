@@ -14,8 +14,20 @@
           <Property Name="Region" Type="varchar" MaxLength="255" />
           <Property Name="Address" Type="varchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="GymProducts">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Category" Type="varchar" MaxLength="255" />
+          <Property Name="Price" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="AvailabilityStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Brand" Type="varchar" MaxLength="255" />
+        </EntityType>
         <EntityContainer Name="GymDatabaseModelStoreContainer">
           <EntitySet Name="GymPlaces" EntityType="Self.GymPlaces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GymProducts" EntityType="Self.GymProducts" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -31,8 +43,20 @@
           <Property Name="Region" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="GymProduct">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="AvailabilityStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityContainer Name="GymDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="GymPlaces" EntityType="Self.GymPlace" />
+          <EntitySet Name="GymProducts" EntityType="Self.GymProduct" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -47,6 +71,18 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Region" ColumnName="Region" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GymProducts">
+            <EntityTypeMapping TypeName="GymDatabaseModel.GymProduct">
+              <MappingFragment StoreEntitySet="GymProducts">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="AvailabilityStatus" ColumnName="AvailabilityStatus" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
