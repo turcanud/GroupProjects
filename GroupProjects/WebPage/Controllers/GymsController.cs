@@ -1,7 +1,8 @@
 ﻿using GymSports.Data.Models;
-using GymSports.Data.Services;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,81 +11,86 @@ namespace WebPage.Controllers
 {
     public class GymsController : Controller
     {
-          private readonly IGymsData db;
-          public GymsController(IGymsData db) {
-               this.db = db;
-          }
-
           public ActionResult Index()
           {
-               var model = db.GetAll();
-               return View(model);
-          }
+               GymDatabaseEntities db = new GymDatabaseEntities();
+               List<GymPlace> places = db.GymPlaces.ToList();
 
-          public ActionResult Details(int id)
-          {
-               var model = db.Get(id);
-               if (model == null)
-               {
-                    return View("NotFound");
-               }
-               return View(model);
+               return View(places);
           }
-
           public ActionResult Create()
           {
                return View();
           }
-
           [HttpPost]
-          [ValidateAntiForgeryToken]
-          public ActionResult Create(Gyms gyms)
+          public ActionResult Create(GymPlace gp)
           {
-               if(ModelState.IsValid)
-               {
-                    db.Add(gyms);
-                    return RedirectToAction("Details", new { id = gyms.Id });
-               }
-               return View();
-          }
-
-          [HttpGet]
-          public ActionResult Edit(int id)
-          {
-               var model = db.Get(id);
-               if(model == null)
-               {
-                    return HttpNotFound();
-               }
-               return View(model);
-          }
-          [HttpPost]
-          [ValidateAntiForgeryToken]
-          public ActionResult Edit(Gyms gyms)
-          {
-               if (ModelState.IsValid)
-               {
-                    db.Update(gyms);
-                    return RedirectToAction("Details", new { id = gyms.Id });
-               }
-               return View(gyms);
-          }
-
-          [HttpGet]
-          public ActionResult Delete(int id)
-          {
-               var model = db.Get(id);
-               if(model == null) {
-                    return View("NotFound");
-               }
-               return View(model);
-          }
-          [HttpPost]
-          [ValidateAntiForgeryToken]
-          public ActionResult Delete(int id, FormCollection form)
-          {
-               db.Delete(id);
+               GymDatabaseEntities db = new GymDatabaseEntities();
+               db.GymPlaces.Add(gp);
+               db.SaveChanges();
                return RedirectToAction("Index");
           }
-    }
+
+          public ActionResult Details(int id)
+          {
+               GymDatabaseEntities db = new GymDatabaseEntities();
+               GymPlace place = db.GymPlaces.Find(id);
+               return View(place);
+          }
+          public ActionResult Edit(int id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var place = db.GymPlaces.Find(id);
+                    if (place != null)
+                    {
+                         return View(place);
+                    }
+                    else
+                    {
+                         // Handle the case where the gym with the specified ID is not found
+                         return RedirectToAction("Index");
+                    }
+               }
+          }
+
+          [HttpPost]
+          public ActionResult Edit(GymPlace gp)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var place = db.GymPlaces.Find(gp.GymID);
+                    if (place != null)
+                    {
+                         place.Name = gp.Name;
+                         place.Address = gp.Address;
+                         place.Region = gp.Region;
+                         db.SaveChanges();
+                    }
+               }
+
+               return RedirectToAction("Index");
+          }
+          public ActionResult Delete(int? id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var place = db.GymPlaces.Find(id);
+                    return View(place);
+               }
+          }
+
+          [HttpPost]
+          public ActionResult Delete(int id)
+          {
+               using (var db = new GymDatabaseEntities())
+               {
+                    var place = db.GymPlaces.Find(id);
+                    db.GymPlaces.Remove(place);
+                    db.SaveChanges();
+               }
+               return RedirectToAction("Index");
+          }
+
+     }
 }

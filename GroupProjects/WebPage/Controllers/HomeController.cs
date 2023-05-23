@@ -1,5 +1,4 @@
-﻿using GymSports.Data.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,12 +8,6 @@ namespace WebPage.Controllers
 {
      public class HomeController : Controller
      {
-          IGymsData db;
-          public HomeController()
-          {
-               db = new InMemoryGymsData();
-          }
-
           public ActionResult Index()
           {
                return View();

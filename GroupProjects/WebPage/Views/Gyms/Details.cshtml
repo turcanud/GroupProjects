@@ -1,42 +1,37 @@
-﻿@model GymSports.Data.Models.Gyms
+﻿@model GymSports.Data.Models.GymPlace
 
 @{
-    ViewBag.Title = "Details";
+     ViewBag.Title = "Details";
 }
 
-<h2>Details @Html.DisplayNameFor(model => model.Name)</h2>
+<h2>Details</h2>
 
-<div>
-    <h4>Gyms</h4>
-    <hr />
-    <dl class="dl-horizontal">
-         <dt>
-              @Html.DisplayNameFor(model => model.Name)
-         </dt>
-
-         <dd>
-              @Html.DisplayFor(model => model.Name)
-         </dd>
-
-         <dt>
-              @Html.DisplayNameFor(model => model.Region)
-         </dt>
-
-         <dd>
-              @Html.DisplayFor(model => model.Region)
-         </dd>
-
-         <dt>
-              @Html.DisplayNameFor(model => model.Address)
-         </dt>
-
-         <dd>
-              @Html.DisplayFor(model => model.Address)
-         </dd>
-
-    </dl>
+<div class="card">
+     <div class="card-body">
+          <h4 class="card-title">@Model.Name</h4>
+          <hr />
+          <dl class="row">
+               <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Name)
+               </dt>
+               <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+               </dd>
+               <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Region)
+               </dt>
+               <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Region)
+               </dd>
+               <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Address)
+               </dt>
+               <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Address)
+               </dd>
+          </dl>
+     </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary bg-warning" })
 </p>

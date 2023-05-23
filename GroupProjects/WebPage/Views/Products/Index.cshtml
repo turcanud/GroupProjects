@@ -1,0 +1,27 @@
+﻿@model List<GymSports.Data.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+<h3><a href="@Url.Action("Create", "Products", new {})">Create New Product</a></h3>
+<table class="table">
+     <thead>
+          <tr>
+               <th>ProductID</th>
+               <th>ProductName</th>
+               <th>Rate</th>
+          </tr>
+     </thead>
+     <tbody>
+          @foreach (var item in Model)
+          {
+               <tr>
+                    <td>@item.ProductId</td>
+                    <td><a href="@Url.Action("Details", "Products", new { id = item.ProductId })">@item.ProductName</a></td>
+                    <td>@item.Rate</td>
+               </tr>
+          }
+     </tbody>
+</table>
+
