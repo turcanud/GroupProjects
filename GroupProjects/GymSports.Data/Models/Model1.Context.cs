@@ -26,5 +26,6 @@ namespace GymSports.Data.Models
         }
     
         public virtual DbSet<GymPlace> GymPlaces { get; set; }
+        public virtual DbSet<GymProduct> GymProducts { get; set; }
     }
 }
