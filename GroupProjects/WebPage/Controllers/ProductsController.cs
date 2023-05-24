@@ -11,7 +11,7 @@ namespace WebPage.Controllers
     {
           public ActionResult Index()
           {
-               var db = new GymDatabaseEntities();
+               var db = new GymDbContext();
                List<GymProduct> products = db.GymProducts.ToList();
                return View(products);
           }
@@ -22,7 +22,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Create(GymProduct gp)
           {
-               var db = new GymDatabaseEntities();
+               var db = new GymDbContext();
                db.GymProducts.Add(gp);
                db.SaveChanges();
                return RedirectToAction("Index");
@@ -30,13 +30,13 @@ namespace WebPage.Controllers
 
           public ActionResult Details(int id)
           {
-               var db = new GymDatabaseEntities();
+               var db = new GymDbContext();
                var products = db.GymProducts.Find(id);
                return View(products);
           }
           public ActionResult Edit(int id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     if (products != null)
@@ -54,7 +54,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Edit(GymProduct gp)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var products = db.GymProducts.Find(gp.ProductID);
                     if (products != null)
@@ -62,6 +62,8 @@ namespace WebPage.Controllers
                          products.Name = gp.Name;
                          products.Category = gp.Category;
                          products.Price = gp.Price;
+                         products.AvailabilityStatus = gp.AvailabilityStatus;
+                         products.Brand = gp.Brand;
                          db.SaveChanges();
                     }
                }
@@ -70,7 +72,7 @@ namespace WebPage.Controllers
           }
           public ActionResult Delete(int? id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     return View(products);
@@ -80,7 +82,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Delete(int id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     db.GymProducts.Remove(products);

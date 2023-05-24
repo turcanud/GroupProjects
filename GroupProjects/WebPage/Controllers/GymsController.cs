@@ -13,7 +13,7 @@ namespace WebPage.Controllers
     {
           public ActionResult Index()
           {
-               GymDatabaseEntities db = new GymDatabaseEntities();
+               GymDbContext db = new GymDbContext();
                List<GymPlace> places = db.GymPlaces.ToList();
 
                return View(places);
@@ -25,7 +25,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Create(GymPlace gp)
           {
-               GymDatabaseEntities db = new GymDatabaseEntities();
+               GymDbContext db = new GymDbContext();
                db.GymPlaces.Add(gp);
                db.SaveChanges();
                return RedirectToAction("Index");
@@ -33,13 +33,13 @@ namespace WebPage.Controllers
 
           public ActionResult Details(int id)
           {
-               GymDatabaseEntities db = new GymDatabaseEntities();
+               GymDbContext db = new GymDbContext();
                GymPlace place = db.GymPlaces.Find(id);
                return View(place);
           }
           public ActionResult Edit(int id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     if (place != null)
@@ -57,7 +57,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Edit(GymPlace gp)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var place = db.GymPlaces.Find(gp.GymID);
                     if (place != null)
@@ -73,7 +73,7 @@ namespace WebPage.Controllers
           }
           public ActionResult Delete(int? id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     return View(place);
@@ -83,7 +83,7 @@ namespace WebPage.Controllers
           [HttpPost]
           public ActionResult Delete(int id)
           {
-               using (var db = new GymDatabaseEntities())
+               using (var db = new GymDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     db.GymPlaces.Remove(place);
