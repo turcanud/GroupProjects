@@ -22,26 +22,6 @@ namespace WebPage.Controllers
           {
                return View();
           }
-          public ActionResult Shop()
-          {
-               return View();
-          }
-          public ActionResult Subscriptions()
-          {
-               return View();
-          }
-          public ActionResult Id1()
-          {
-               return View();
-          }
-          public ActionResult Id2()
-          {
-               return View();
-          }
-          public ActionResult Id3()
-          {
-               return View();
-          }
           public ActionResult LoginPage()
           {
                return View();

@@ -11,6 +11,10 @@ namespace WebPage
                bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                            "~/Scripts/jquery-{version}.js"));
 
+               
+               bundles.Add(new ScriptBundle("~/bundles/popper/js").Include(
+                                "~/Scripts/popper.js"));
+
                bundles.Add(new ScriptBundle("~/bundles/mainScript").Include(
                            "~/Content/appScript/app.js"));
 
@@ -40,8 +44,6 @@ namespace WebPage
                          "~/Content/styles/SMascot.css"));
                bundles.Add(new StyleBundle("~/Content/logPage/css").Include(
                          "~/Content/styles/SLoginPage.css"));
-               bundles.Add(new StyleBundle("~/Content/contactPage/css").Include(
-                         "~/Content/styles/SContactPage.css"));
           }
      }
 }
