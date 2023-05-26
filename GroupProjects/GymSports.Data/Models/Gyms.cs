@@ -19,5 +19,6 @@ namespace GymSports.Data.Models
           [Required]
           [MaxLength(69)]
           public string Address { get; set; }
+         
     }
 }
