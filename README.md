@@ -15,22 +15,22 @@ Welcome to GymSports, the ultimate online destination for all your fitness needs
 
 When you run the project, a predefined administrator account will be available in the database. To log in as an administrator, simply enter "admin:admin123" on the login page. This will grant you administrator privileges. However, if you wish to login as a customer, you need to complete the registration process first.
 
-![[1.png]]
+![[1.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/1.PNG?raw=true)
 
 When logging in as an admin, you gain the ability to add, edit, and remove gyms and products. This grants you full control over managing the gyms and products within the system.
-![[2.png]]
+![[2.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/2.PNG?raw=true)
 
-![[3.png]]
+![[3.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/3.PNG?raw=true)
 
-![[5.png]]
+![[5.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/5.PNG?raw=true)
 
 The gyms and products will be displayed as a list, and their details will only be visible when you click on their respective names. This allows for a more organized and streamlined presentation of information.
-![[6.png]]
+![[6.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/6.PNG?raw=true)
 
-![[7.png]]
+![[7.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/7.PNG?raw=true)
 
 When you click on your name, you can access your profile details, and there is also an option to log out.
-![[8.png]]
+![[8.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/8.PNG?raw=true)
 
 ## Installation
 
