@@ -2,10 +2,11 @@
 
 @{
      ViewBag.Title = "Create";
+     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 <h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "GymPlace", new { area = "Admin" }, FormMethod.Post))
 {
      @Html.AntiForgeryToken()
 
@@ -68,5 +69,5 @@
 }
 
 <div class="mt-4">
-     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+     @Html.ActionLink("Back to List", "Index", null, new { area = "Admin", @class = "btn btn-secondary" })
 </div>

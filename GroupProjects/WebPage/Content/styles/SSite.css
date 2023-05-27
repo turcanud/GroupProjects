@@ -1,4 +1,15 @@
 
+
+/* Light mode */
+.navbar-light .navbar-nav .nav-link {
+     color: #000;
+}
+
+/* Dark mode */
+.navbar-dark .navbar-nav .nav-link {
+     color: #fff;
+}
+
 .navbar {
      background: var(--nav-bar-light-color);
 }

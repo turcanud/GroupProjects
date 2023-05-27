@@ -1,0 +1,81 @@
+﻿@model GymSports.Data.ViewModels.RegisterViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register</title>
+     @Styles.Render("~/Content/css")
+     <!-- Bootstrap CSS -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+     <div class="container py-5">
+          <div class="row justify-content-center">
+               <div class="col-lg-4">
+                    <div class="card">
+                         <div class="card-body">
+                              <h2 class="card-title text-center">Register</h2>
+                              @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+                              {
+                                   <div class="mb-3">
+                                        @Html.LabelFor(temp => temp.Username, new { @class = "form-label" })
+                                        <div class="input-group">
+                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                             @Html.TextBoxFor(temp => temp.Username, new { placeholder = "Username", @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="invalid-feedback">
+                                             @Html.ValidationMessageFor(temp => temp.Username)
+                                        </div>
+                                   </div>
+                                   <div class="mb-3">
+                                        @Html.LabelFor(temp => temp.Password, new { @class = "form-label" })
+                                        <div class="input-group">
+                                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                             @Html.PasswordFor(temp => temp.Password, new { placeholder = "Password", @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="invalid-feedback">
+                                             @Html.ValidationMessageFor(temp => temp.Password)
+                                        </div>
+                                   </div>
+                                   <div class="mb-3">
+                                        @Html.LabelFor(temp => temp.ConfirmPassword, new { @class = "form-label" })
+                                        <div class="input-group">
+                                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                             @Html.PasswordFor(temp => temp.ConfirmPassword, new { placeholder = "Confirm Password", @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="invalid-feedback">
+                                             @Html.ValidationMessageFor(temp => temp.ConfirmPassword)
+                                        </div>
+                                   </div>
+                                   <div class="mb-3">
+                                        @Html.LabelFor(temp => temp.Email, new { @class = "form-label" })
+                                        <div class="input-group">
+                                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                             @Html.TextBoxFor(temp => temp.Email, new { placeholder = "Email", @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="invalid-feedback">
+                                             @Html.ValidationMessageFor(temp => temp.Email)
+                                        </div>
+                                   </div>
+
+                                   @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                   <div class="d-grid">
+                                        <button type="submit" class="btn btn-success bg-success"><i class="fas fa-check"></i> Register</button>
+                                   </div>
+                              }
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     @Scripts.Render("~/bundles/jquery")
+     <!-- Bootstrap JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

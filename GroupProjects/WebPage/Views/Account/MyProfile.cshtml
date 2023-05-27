@@ -1,0 +1,17 @@
+﻿@model GymSports.Data.Identity.ApplicationUser
+
+@{
+     ViewBag.Title = "MyProfile";
+}
+
+<h2>My Profile</h2>
+<table class="table table-bordered">
+     <tr>
+          <th>Username</th>
+          <td>@Model.UserName</td>
+     </tr>
+     <tr>
+          <th>Email</th>
+          <td>@Model.Email</td>
+     </tr>
+</table>
