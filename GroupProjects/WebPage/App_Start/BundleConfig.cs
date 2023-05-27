@@ -38,7 +38,6 @@ namespace WebPage
                bundles.Add(new StyleBundle("~/Content/css").Include(
                          "~/Content/bootstrap.css",
                          "~/Content/styles/SSite.css", 
-                         "~/Content/styles/SLogin-btn.css",
                          "~/Content/styles/SProducts.css",
                          "~/Content/styles/SVars.css",
                          "~/Content/styles/SMascot.css"));

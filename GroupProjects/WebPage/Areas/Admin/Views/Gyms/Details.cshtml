@@ -2,6 +2,7 @@
 
 @{
      ViewBag.Title = "Details";
+     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
 <h2>Details</h2>
@@ -33,5 +34,5 @@
      </div>
 </div>
 <p>
-     @Html.ActionLink("Back to List", "Index", null, new { area = "", @class = "btn btn-secondary bg-warning" })
+     @Html.ActionLink("Back to List", "Index", null, new { area = "Admin", @class = "btn btn-secondary bg-warning" })
 </p>

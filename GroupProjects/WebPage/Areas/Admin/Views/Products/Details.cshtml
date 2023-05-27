@@ -2,6 +2,7 @@
 
 @{
      ViewBag.Title = "Details";
+     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
 <h2 class="text-2xl font-bold mb-4">Details</h2>
@@ -33,6 +34,6 @@
      </dl>
 </div>
 <p class="mt-4">
-     @Html.ActionLink("Back to List", "Index", "Home", new { area = "" }, new { @class = "btn btn-secondary" })
+     @Html.ActionLink("Back to List", "Index", "Home", new { area = "Admin" }, new { @class = "btn btn-secondary" })
 </p>
 
