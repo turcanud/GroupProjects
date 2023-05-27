@@ -22,6 +22,7 @@ namespace WebPage.Areas.Admin.Controllers
           {
                return View();
           }
+
           [HttpPost]
           public ActionResult Create(GymPlace gp)
           {

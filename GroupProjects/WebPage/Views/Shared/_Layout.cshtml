@@ -52,12 +52,7 @@
                          @if (User.Identity.IsAuthenticated == true)
                          {
                               <li class="nav-item">
-                                   <span class="nav-link">
-                                        <b>@User.Identity.Name</b>
-                                   </span>
-                              </li>
-                              <li class="nav-item">
-                                   @Html.ActionLink("MyProfile", "MyProfile", "Account", new { area = "" }, new { @class = "nav-link" })
+                                   @Html.ActionLink(User.Identity.Name, "MyProfile", "Account", new { area = "" }, new { @class = "nav-link fw-bold text-info" })
                               </li>
                               <li class="nav-item">
                                    @Html.ActionLink("Logout", "Logout", "Account", new { area = "" }, new { @class = "nav-link" })
