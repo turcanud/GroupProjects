@@ -14,11 +14,12 @@ namespace WebPage.Controllers
      [CustomerAuthorization]
      public class ProductsController : Controller
      {
-          private GymDbContext db = new GymDbContext();
+          private ProductsDbContext db = new ProductsDbContext();
 
-          public ActionResult Index()
+          public ActionResult Index(string searchTerm = "")
           {
-               List<GymProduct> products = db.GymProducts.ToList();
+               List<GymProduct> products = db.GymProducts.Where(temp => temp.Name.Contains(searchTerm)).ToList();
+               ViewBag.SearchTerm = searchTerm;
                return View(products);
           }
 

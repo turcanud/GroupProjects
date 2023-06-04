@@ -114,7 +114,8 @@
     <Compile Include="Identity\ApplicationUserStore.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\GymDbContext.cs" />
+    <Compile Include="Models\GymsDbContext.cs" />
+    <Compile Include="Models\ProductsDbContext.cs" />
     <Compile Include="Models\GymPlace.cs" />
     <Compile Include="Models\GymProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,9 @@
 ﻿@model GymSports.Data.ViewModels.LoginViewModel
 
+@{
+     Layout = null;
+}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +46,9 @@
                                    </div>
                               }
                          </div>
+                    </div>
+                    <div class="text-center mt-3">
+                         Don't have an account? <a href="@Url.Action("Register", "Account")">Register</a>
                     </div>
                </div>
           </div>

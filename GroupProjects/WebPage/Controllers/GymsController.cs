@@ -15,14 +15,14 @@ namespace WebPage.Controllers
           // GET: Gyms
           public ActionResult Index()
           {
-               GymDbContext db = new GymDbContext();
+               GymsDbContext db = new GymsDbContext();
                List<GymPlace> places = db.GymPlaces.ToList();
 
                return View(places);
           }
           public ActionResult Details(int id)
           {
-               GymDbContext db = new GymDbContext();
+               GymsDbContext db = new GymsDbContext();
                GymPlace place = db.GymPlaces.Find(id);
                return View(place);
           }

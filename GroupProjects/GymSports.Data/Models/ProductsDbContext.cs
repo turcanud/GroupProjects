@@ -7,13 +7,12 @@ using System.Data.Entity;
 
 namespace GymSports.Data.Models
 {
-     public class GymDbContext : DbContext
+     public class ProductsDbContext : DbContext
      {
-        public GymDbContext() : base("GymDataBaseStack")
+        public ProductsDbContext() : base("GymPurchaseDataBase")
         {
             
         }
-        public DbSet<GymPlace> GymPlaces { get; set; }
           public DbSet<GymProduct> GymProducts { get; set; }
           public DbSet<CartItem> CartItems { get; set; }
           public DbSet<Cart> Carts { get; set; }

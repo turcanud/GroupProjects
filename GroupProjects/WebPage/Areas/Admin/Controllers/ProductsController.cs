@@ -13,7 +13,7 @@ namespace WebPage.Areas.Admin.Controllers
      {
           public ActionResult Index()
           {
-               var db = new GymDbContext();
+               var db = new ProductsDbContext();
                List<GymProduct> products = db.GymProducts.ToList();
                return View(products);
           }
@@ -24,7 +24,7 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Create(GymProduct gp)
           {
-               var db = new GymDbContext();
+               var db = new ProductsDbContext();
                db.GymProducts.Add(gp);
                db.SaveChanges();
                return RedirectToAction("Index");
@@ -32,13 +32,13 @@ namespace WebPage.Areas.Admin.Controllers
 
           public ActionResult Details(int id)
           {
-               var db = new GymDbContext();
+               var db = new ProductsDbContext();
                var products = db.GymProducts.Find(id);
                return View(products);
           }
           public ActionResult Edit(int id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new ProductsDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     if (products != null)
@@ -56,7 +56,7 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Edit(GymProduct gp)
           {
-               using (var db = new GymDbContext())
+               using (var db = new ProductsDbContext())
                {
                     var products = db.GymProducts.Find(gp.ProductID);
                     if (products != null)
@@ -74,7 +74,7 @@ namespace WebPage.Areas.Admin.Controllers
           }
           public ActionResult Delete(int? id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new ProductsDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     return View(products);
@@ -84,7 +84,7 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Delete(int id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new ProductsDbContext())
                {
                     var products = db.GymProducts.Find(id);
                     db.GymProducts.Remove(products);

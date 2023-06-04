@@ -13,7 +13,7 @@ namespace WebPage.Areas.Admin.Controllers
      {
           public ActionResult Index()
           {
-               GymDbContext db = new GymDbContext();
+               GymsDbContext db = new GymsDbContext();
                List<GymPlace> places = db.GymPlaces.ToList();
 
                return View(places);
@@ -26,20 +26,20 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Create(GymPlace gp)
           {
-               GymDbContext db = new GymDbContext();
+               GymsDbContext db = new GymsDbContext();
                db.GymPlaces.Add(gp);
                db.SaveChanges();
                return RedirectToAction("Index");
           }
           public ActionResult Details(int id)
           {
-               GymDbContext db = new GymDbContext();
+               GymsDbContext db = new GymsDbContext();
                GymPlace place = db.GymPlaces.Find(id);
                return View(place);
           }
           public ActionResult Edit(int id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new GymsDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     if (place != null)
@@ -56,7 +56,7 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Edit(GymPlace gp)
           {
-               using (var db = new GymDbContext())
+               using (var db = new GymsDbContext())
                {
                     var place = db.GymPlaces.Find(gp.GymID);
                     if (place != null)
@@ -72,7 +72,7 @@ namespace WebPage.Areas.Admin.Controllers
           }
           public ActionResult Delete(int? id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new GymsDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     return View(place);
@@ -81,7 +81,7 @@ namespace WebPage.Areas.Admin.Controllers
           [HttpPost]
           public ActionResult Delete(int id)
           {
-               using (var db = new GymDbContext())
+               using (var db = new GymsDbContext())
                {
                     var place = db.GymPlaces.Find(id);
                     db.GymPlaces.Remove(place);
