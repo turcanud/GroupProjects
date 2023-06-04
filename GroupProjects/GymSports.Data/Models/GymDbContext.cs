@@ -15,5 +15,8 @@ namespace GymSports.Data.Models
         }
         public DbSet<GymPlace> GymPlaces { get; set; }
           public DbSet<GymProduct> GymProducts { get; set; }
+          public DbSet<CartItem> CartItems { get; set; }
+          public DbSet<Cart> Carts { get; set; }
+
      }
 }

@@ -13,6 +13,7 @@
                     <th><i class="fas fa-dollar-sign"></i> Product Price</th>
                     <th><i class="fas fa-check-circle"></i> Product AvailabilityStatus</th>
                     <th><i class="fas fa-industry"></i> Product Brand</th>
+                    <th>Action</th>
                </tr>
           </thead>
           <tbody>
@@ -26,6 +27,16 @@
                          <td>@item.Price</td>
                          <td>@item.AvailabilityStatus</td>
                          <td>@item.Brand</td>
+                         <td>
+                              @using (Html.BeginForm("AddToCart", "Products", FormMethod.Post))
+                              {
+                                   @Html.Hidden("productId", item.ProductID)
+                                   <div class="input-group">
+                                        <input type="number" class="form-control" name="quantity" value="1" min="1" max="10">
+                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                   </div>
+                              }
+                         </td>
                     </tr>
                }
           </tbody>

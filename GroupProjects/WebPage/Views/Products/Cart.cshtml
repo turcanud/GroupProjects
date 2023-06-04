@@ -1,0 +1,45 @@
+﻿@model GymSports.Data.Models.Cart
+
+@{
+     ViewBag.Title = "Cart";
+}
+
+<h2>Shopping Cart</h2>
+
+@if (Model.CartItems.Count == 0)
+{
+     <p>Your cart is empty.</p>
+}
+else
+{
+     <div class="table-responsive">
+          <table class="table table-striped table-hover">
+               <thead class="table-dark">
+                    <tr>
+                         <th>Product</th>
+                         <th>Quantity</th>
+                         <th>Price</th>
+                         <th>Total</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach (var item in Model.CartItems)
+                    {
+                         <tr>
+                              <td>@item.Product.Name</td>
+                              <td>@item.Quantity</td>
+                              <td>@item.Product.Price</td>
+                              <td>@(item.Quantity * item.Product.Price)</td>
+                         </tr>
+                    }
+               </tbody>
+          </table>
+     </div>
+
+     <p>Total: @(Model.CartItems.Sum(item => item.Quantity * item.Product.Price))</p>
+
+     <div>
+          <a href="@Url.Action("Index", "Products")" class="btn btn-secondary">Continue Shopping</a>
+          <a href="@Url.Action("Checkout", "Cart")" class="btn btn-primary">Proceed to Checkout</a>
+     </div>
+}
