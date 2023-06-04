@@ -226,6 +226,7 @@
     <Compile Include="Controllers\GymsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,7 +234,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\appScript\app.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -252,19 +252,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\img\background6.jpg" />
-    <Content Include="Content\img\brightness-and-contrast.png" />
-    <Content Include="Content\img\github.png" />
-    <Content Include="Content\img\gym-p1.jpg" />
-    <Content Include="Content\img\gym-p2.jpg" />
-    <Content Include="Content\img\gym-p3.jpg" />
-    <Content Include="Content\img\moon.png" />
-    <Content Include="Content\img\sun.png" />
-    <Content Include="Content\img\suny.png" />
-    <Content Include="Content\styles\SLoginPage.css" />
-    <Content Include="Content\styles\SMascot.css" />
-    <Content Include="Content\styles\SProducts.css" />
-    <Content Include="Content\styles\SVars.css" />
+    <Content Include="Content\styles\SHomePage.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -306,6 +294,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\video\pexels-cottonbro-studio-4753946-4096x2160-25fps.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -467,10 +456,12 @@
     <Content Include="Views\Gyms\Index.cshtml" />
     <Content Include="Views\Gyms\Details.cshtml" />
     <Content Include="Views\Products\Cart.cshtml" />
+    <Content Include="Views\Start\Starting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Content\img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

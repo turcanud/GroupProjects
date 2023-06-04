@@ -10,8 +10,7 @@ using System.Data.Entity;
 
 namespace WebPage.Controllers
 {
-     [IfAuthenticationFilter]
-     [CustomerAuthorization]
+     [RedirectUnauthenticatedFilter]
      public class ProductsController : Controller
      {
           private ProductsDbContext db = new ProductsDbContext();

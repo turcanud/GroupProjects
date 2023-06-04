@@ -7,8 +7,7 @@ using GymSports.Data.Filters;
 
 namespace WebPage.Controllers
 {
-     [IfAuthenticationFilter]
-     [CustomerAuthorization]
+     [RedirectUnauthenticatedFilter]
      public class HomeController : Controller
      {
           public ActionResult Index()

@@ -10,43 +10,58 @@
      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
      <!-- Font Awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+     <style>
+          body.dark-mode {
+               background-color: #222;
+               color: #fff;
+          }
+
+          .navbar-light .navbar-toggler-icon.text-light {
+               background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+          }
+
+               .navbar-light .navbar-toggler-icon.text-light:focus,
+               .navbar-light .navbar-toggler-icon.text-light:hover {
+                    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+               }
+     </style>
 </head>
-<body>
-     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<body class="dark-mode">
+     <nav class="navbar navbar-expand-sm navbar-light bg-dark">
           <div class="container">
-               <a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = "Admin" })">Admin</a>
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+               <a class="navbar-brand text-white" href="@Url.Action("Index", "Home", new { area = "Admin" })">Admin</a>
+               <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon text-light"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto">
                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("Index", "Users", new { area = "Admin" })">Users</a>
+                              <a class="nav-link text-light" href="@Url.Action("Index", "Users", new { area = "Admin" })">Users</a>
                          </li>
                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("Index", "Gyms", new { area = "Admin" })">Gyms</a>
+                              <a class="nav-link text-light" href="@Url.Action("Index", "Gyms", new { area = "Admin" })">Gyms</a>
                          </li>
                          <li class="nav-item">
-                              <a class="nav-link" href="@Url.Action("Index", "Products", new { area = "Admin" })">Products</a>
+                              <a class="nav-link text-light" href="@Url.Action("Index", "Products", new { area = "Admin" })">Products</a>
                          </li>
                     </ul>
                     @if (User.Identity.IsAuthenticated)
                     {
                          <ul class="navbar-nav">
                               <li class="nav-item">
-                                   <a class="nav-link" href="@Url.Action("Logout", "Home", new { area = "Admin" })">Logout</a>
+                                   <a class="nav-link text-light" href="@Url.Action("Logout", "Home", new { area = "Admin" })">Logout</a>
                               </li>
                          </ul>
                     }
-                    <img src="~/Content/img/brightness-and-contrast.png" id="dark-mode-toggle" class="ms-3" />
                </div>
           </div>
      </nav>
      <div class="container mt-4">
           @RenderBody()
      </div>
-     <footer class="text-center py-3">
+     <footer class="text-center py-3 text-light">
           <p class="m-0">&copy; @DateTime.Now.Year - TI-213</p>
      </footer>
 

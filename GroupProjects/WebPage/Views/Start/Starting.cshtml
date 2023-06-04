@@ -1,0 +1,30 @@
+﻿@{
+     Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SportsGym Website</title>
+     <link rel="stylesheet" href="~/Content/styles/SHomePage.css">
+</head>
+<body>
+     <section class="banner">
+          <header>
+               <h2 class="logo">
+                    @Html.ActionLink("SportsGym", "Login", "Account", new { area = "" }, new { @class = "" })
+               </h2>
+          </header>
+          <video src="~/Content/video/pexels-cottonbro-studio-4753946-4096x2160-25fps.mp4" muted loop autoplay></video>
+          <div class="overlay"></div>
+          <div class="text">
+               <h2>Be Stronger.</h2>
+               <h3>Never give up.</h3>
+               <p>Visit our gym to achieve your fitness goals.</p>
+               @Html.ActionLink("Join Us", "Login", "Account", new { area = "" }, new { @class = "" })
+          </div>
+     </section>
+</body>
+</html>

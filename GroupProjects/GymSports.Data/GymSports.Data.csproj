@@ -108,6 +108,7 @@
     <Compile Include="Filters\AdminAuthorization.cs" />
     <Compile Include="Filters\CustomerAuthorization.cs" />
     <Compile Include="Filters\IfAuthenticationFilter.cs" />
+    <Compile Include="Filters\RedirectUnauthenticatedFilter.cs" />
     <Compile Include="Identity\ApplicationDbContext.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
