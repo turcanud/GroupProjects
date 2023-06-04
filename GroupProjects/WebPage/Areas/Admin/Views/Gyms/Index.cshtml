@@ -26,12 +26,12 @@
                     <tr>
                          <td>@item.GymID</td>
                          <td>
-                              <a href="@Url.Action("Details", "Gyms", new { id = item.GymID }, "Admin")" class="text-decoration-none">@item.Name</a>
+                              <a href="@Url.Action("Details", "Gyms", new { id = item.GymID, area = "Admin"})" class="text-decoration-none">@item.Name</a>
                          </td>
                          <td>@item.Region</td>
                          <td>@item.Address</td>
-                         <td><a href="@Url.Action("Edit", "Gyms", new { id = item.GymID }, "Admin")" class="text-decoration-none"><i class="fas fa-edit"></i> Edit</a></td>
-                         <td><a href="@Url.Action("Delete", "Gyms", new { id = item.GymID }, "Admin")" class="text-decoration-none text-danger"><i class="fas fa-trash-alt"></i> Delete</a></td>
+                         <td><a href="@Url.Action("Edit", "Gyms", new { id = item.GymID, area = "Admin"})" class="text-decoration-none"><i class="fas fa-edit"></i> Edit</a></td>
+                         <td><a href="@Url.Action("Delete", "Gyms", new { id = item.GymID, area = "Admin"})" class="text-decoration-none text-danger"><i class="fas fa-trash-alt"></i> Delete</a></td>
                     </tr>
                }
           </tbody>
