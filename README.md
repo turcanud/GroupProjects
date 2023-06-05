@@ -32,6 +32,14 @@ The gyms and products will be displayed as a list, and their details will only b
 When you click on your name, you can access your profile details, and there is also an option to log out.
 ![[8.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/8.PNG?raw=true)
 
+![[qae.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/qae.PNG?raw=true)
+
+![[qae1.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/qae1.PNG?raw=true)
+
+![[qae2.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/qae2.PNG?raw=true)
+
+![[qae3.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/qae3.PNG?raw=true)
+
 ## Installation
 
 ```bash
