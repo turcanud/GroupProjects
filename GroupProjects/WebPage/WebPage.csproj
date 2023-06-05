@@ -457,6 +457,7 @@
     <Content Include="Views\Gyms\Details.cshtml" />
     <Content Include="Views\Products\Cart.cshtml" />
     <Content Include="Views\Start\Starting.cshtml" />
+    <Content Include="Views\Home\Subscriptions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

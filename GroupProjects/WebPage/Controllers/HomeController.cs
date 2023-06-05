@@ -15,6 +15,11 @@ namespace WebPage.Controllers
                return View();
           }
 
+          public ActionResult Subscriptions()
+          {
+               return View();
+          }
+
           public ActionResult About()
           {
                return View();
