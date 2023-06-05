@@ -1,25 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace GymSports.Data.Models
 {
-     public partial class GymPlace
+     public class GymPlace
      {
           [Key]
           public int GymID { get; set; }
-          [Required]
-          [MaxLength(20, ErrorMessage ="The name has to be less than 20 characters.")]
-          [MinLength(4, ErrorMessage = "The name has to contain more than 4 characters.")]
-          public string Name { get; set; }
-          [Required]
+
+          [Required(ErrorMessage = "Name and surname are required.")]
+          [StringLength(20, MinimumLength = 4, ErrorMessage = "The name should be between 4 and 20 characters.")]
+          public string NameSurname { get; set; }
+
+          [Required(ErrorMessage = "Region is required.")]
+          [StringLength(50, ErrorMessage = "The region should be up to 50 characters.")]
           public string Region { get; set; }
-          [Required]
-          [MaxLength(69)]
-          [MinLength(6, ErrorMessage = "The Address has to contain more than 6 characters.")]
-          public string Address { get; set; }
+
+          [Required(ErrorMessage = "Date is required.")]
+          [DataType(DataType.Date)]
+          [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+          public DateTime Date { get; set; }
+
+          [Required(ErrorMessage = "Time is required.")]
+          public string Time { get; set; }
      }
 }
