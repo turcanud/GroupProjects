@@ -25,6 +25,16 @@ namespace WebPage.Areas.Admin.Controllers
           public ActionResult Create(GymProduct gp)
           {
                var db = new ProductsDbContext();
+
+               if (Request.Files.Count >= 1)
+               {
+                    var file = Request.Files[0];
+                    var imgBytes = new byte[file.ContentLength];
+                    file.InputStream.Read(imgBytes, 0, file.ContentLength);
+                    var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                    gp.Photo = base64String;
+               }
+
                db.GymProducts.Add(gp);
                db.SaveChanges();
                return RedirectToAction("Index");
@@ -54,24 +64,35 @@ namespace WebPage.Areas.Admin.Controllers
           }
 
           [HttpPost]
-          public ActionResult Edit(GymProduct gp)
+          public ActionResult Edit(GymProduct gp, HttpPostedFileBase photo)
           {
                using (var db = new ProductsDbContext())
                {
-                    var products = db.GymProducts.Find(gp.ProductID);
-                    if (products != null)
+                    var product = db.GymProducts.Find(gp.ProductID);
+                    if (product != null)
                     {
-                         products.Name = gp.Name;
-                         products.Category = gp.Category;
-                         products.Price = gp.Price;
-                         products.AvailabilityStatus = gp.AvailabilityStatus;
-                         products.Brand = gp.Brand;
+                         product.Name = gp.Name;
+                         product.Category = gp.Category;
+                         product.Price = gp.Price;
+                         product.AvailabilityStatus = gp.AvailabilityStatus;
+                         product.Brand = gp.Brand;
+
+                         if (photo != null && photo.ContentLength > 0)
+                         {
+                              var imgBytes = new byte[photo.ContentLength];
+                              photo.InputStream.Read(imgBytes, 0, photo.ContentLength);
+                              var base64String = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
+                              product.Photo = base64String;
+                         }
+
                          db.SaveChanges();
                     }
                }
 
                return RedirectToAction("Index");
           }
+
+
           public ActionResult Delete(int? id)
           {
                using (var db = new ProductsDbContext())

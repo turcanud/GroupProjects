@@ -14,6 +14,7 @@
      <table class="table table-striped table-hover">
           <thead class="table-dark">
                <tr>
+                    <th><i class="fas fa-image"></i> Product Photo</th>
                     <th><i class="fas fa-hashtag"></i> ID</th>
                     <th><i class="fas fa-box"></i> Product Name</th>
                     <th><i class="fas fa-tag"></i> Product Category</th>
@@ -28,6 +29,9 @@
                @foreach (var item in Model)
                {
                     <tr>
+                         <td>
+                              <img src="data:image;base64,@item.Photo" width="100px" alt="Product-IMG" />
+                         </td>
                          <td>@item.ProductID</td>
                          <td>
                               <a href="@Url.Action("Details", "Products", new { area = "Admin", id = item.ProductID })" class="text-decoration-none">@item.Name</a>

@@ -77,6 +77,13 @@
                </div>
 
                <div class="form-group row">
+                    @Html.Label("Image", htmlAttributes: new { @class = "col-md-2 col-form-label" })
+                    <div class="col-md-10">
+                         <input type="file" class="form-control-file" name="Photo" />
+                    </div>
+               </div>
+
+               <div class="form-group row">
                     <div class="col-md-10 offset-md-2">
                          <button type="submit" class="btn btn-primary bg-success">
                               <i class="fas fa-plus-circle"></i> Create

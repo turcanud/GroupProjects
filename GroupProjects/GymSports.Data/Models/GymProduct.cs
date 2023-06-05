@@ -27,5 +27,7 @@ namespace GymSports.Data.Models
           [MaxLength(20, ErrorMessage = "The Brand Name has to be less than 20 characters.")]
           [MinLength(4, ErrorMessage = "The Brand Name has to contain more than 4 characters.")]
           public string Brand { get; set; }
+
+          public string Photo { get; set; }
      }
 }

@@ -2,51 +2,38 @@
 
 @{
      ViewBag.Title = "Products";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="@Url.Action("Index", "Products")" method="get" class="form-check-label">
-     <div class="input-group">
-          <input type="search" class="form-control" name="searchTerm" placeholder="Search by name" value="@ViewBag.SearchTerm">
-          <button type="submit" class="btn btn-success m-lg-1">Search</button>
-     </div>
-</form>
+<style>
+     .product-image {
+          max-width: 450px;
+          height: 425px;
+     }
+</style>
 
-
-<div class="table-responsive m-4">
-     <table class="table table-striped table-hover">
-          <thead class="table-dark">
-               <tr>
-                    <th><i class="fas fa-box"></i> Product Name</th>
-                    <th><i class="fas fa-tag"></i> Product Category</th>
-                    <th><i class="fas fa-dollar-sign"></i> Product Price</th>
-                    <th><i class="fas fa-check-circle"></i> Product AvailabilityStatus</th>
-                    <th><i class="fas fa-industry"></i> Product Brand</th>
-                    <th>Action</th>
-               </tr>
-          </thead>
-          <tbody>
-               @foreach (var item in Model)
-               {
-                    <tr>
-                         <td>
-                              <a href="@Url.Action("Details", "Products", new { id = item.ProductID })" class="text-decoration-none">@item.Name</a>
-                         </td>
-                         <td>@item.Category</td>
-                         <td>@item.Price</td>
-                         <td>@item.AvailabilityStatus</td>
-                         <td>@item.Brand</td>
-                         <td>
-                              @using (Html.BeginForm("AddToCart", "Products", FormMethod.Post))
-                              {
-                                   @Html.Hidden("productId", item.ProductID)
-                                   <div class="input-group">
-                                        <input type="number" class="form-control" name="quantity" value="1" min="1" max="10">
-                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
-                                   </div>
-                              }
-                         </td>
-                    </tr>
-               }
-          </tbody>
-     </table>
+<div class="row">
+     @foreach (var item in Model)
+     {
+          <div class="col-md-4 mb-4">
+               <div class="card">
+                    <img src="data:image;base64,@item.Photo" class="card-img-top product-image" alt="Product-IMG">
+                    <div class="card-body">
+                         <h5 class="card-title">@item.Name</h5>
+                         <p class="card-text">
+                              <strong>Category:</strong> @item.Category <br>
+                              <strong>Price:</strong> @item.Price <br>
+                              <strong>Availability:</strong> @item.AvailabilityStatus <br>
+                              <strong>Brand:</strong> @item.Brand
+                         </p>
+                         <a href="@Url.Action("Details", "Products", new { id = item.ProductID })" class="btn btn-primary mr-2">Details</a>
+                         <form action="@Url.Action("AddToCart", "Products")" method="post" class="d-inline">
+                              <input type="hidden" name="productId" value="@item.ProductID" />
+                              <input type="number" name="quantity" value="1" min="1" class="form-control" />
+                              <button type="submit" class="btn btn-success">Add to Cart</button>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     }
 </div>
