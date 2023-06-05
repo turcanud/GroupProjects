@@ -107,5 +107,10 @@ namespace WebPage.Controllers
 
                return View(cart);
           }
+
+          public ActionResult Checkout()
+          {
+               return View();
+          }
      }
 }

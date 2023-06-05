@@ -252,7 +252,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\card_img.png" />
     <Content Include="Content\styles\SHomePage.css" />
+    <Content Include="Content\styles\style.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -458,11 +460,11 @@
     <Content Include="Views\Products\Cart.cshtml" />
     <Content Include="Views\Start\Starting.cshtml" />
     <Content Include="Views\Home\Subscriptions.cshtml" />
+    <Content Include="Views\Products\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Content\img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
