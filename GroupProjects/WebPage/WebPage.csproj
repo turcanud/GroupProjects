@@ -238,6 +238,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
     <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-icons.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-reboot.rtl.css" />
@@ -253,6 +254,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\img\card_img.png" />
+    <Content Include="Content\img\Gradient Wave %281%29.png" />
     <Content Include="Content\styles\SHomePage.css" />
     <Content Include="Content\styles\style.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -461,6 +463,8 @@
     <Content Include="Views\Start\Starting.cshtml" />
     <Content Include="Views\Home\Subscriptions.cshtml" />
     <Content Include="Views\Products\Checkout.cshtml" />
+    <Content Include="Views\Gyms\Create.cshtml" />
+    <Content Include="Views\Gyms\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

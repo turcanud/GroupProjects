@@ -14,7 +14,7 @@ namespace GymSports.Data.Models
           public int Quantity { get; set; }
           public decimal Subtotal
           {
-               get { return Quantity * (Product.Price ?? 0); }
+               get { return Quantity * (Product?.Price ?? 0); }
           }
           public virtual GymProduct Product { get; set; }
      }

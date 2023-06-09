@@ -4,6 +4,14 @@
      ViewBag.Title = "Cart";
 }
 
+<style>
+     h2, #main {
+          background-color: rgba(0,0,0,0.75);
+          padding: 2rem;
+          border-radius: 1rem;
+     }
+</style>
+
 <h2>Shopping Cart</h2>
 
 @if (Model.CartItems == null || Model.CartItems.Count == 0)
@@ -12,44 +20,46 @@
 }
 else
 {
-     <div class="table-responsive">
-          <table class="table table-striped table-hover">
-               <thead class="table-dark">
-                    <tr>
-                         <th>Product</th>
-                         <th>Quantity</th>
-                         <th>Price$</th>
-                         <th>Total</th>
-                    </tr>
-               </thead>
-               <tbody>
-                    @foreach (var item in Model.CartItems)
+<div id="main" class="table-responsive">
+     <table class="table table-striped table-hover">
+          <thead class="table-dark">
+               <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price$</th>
+                    <th>Total</th>
+               </tr>
+          </thead>
+          <tbody>
+               @foreach (var item in Model.CartItems)
+               {
+                    if (item.Product != null)
                     {
-                         if (item.Product != null)
-                         {
-                              <tr>
-                                   <td>
-                                        <div class="cart-item">
-                                             @if (!string.IsNullOrEmpty(item.Product.Photo))
-                                             {
-                                                  <img src="data:image;base64,@item.Product.Photo" alt="Product-IMG" class="cart-item-image w-25 h-25">
-                                             }
-                                             <span class="cart-item-name">@item.Product.Name</span>
-                                        </div>
-                                   </td>
-                                   <td>@item.Quantity</td>
-                                   <td>@item.Product.Price</td>
-                                   <td>@(item.Quantity * (item.Product.Price ?? 0))</td>
-                              </tr>
-                         }
+                         <tr>
+                              <td>
+                                   <div class="cart-item">
+                                        @if (!string.IsNullOrEmpty(item.Product.Photo))
+                                        {
+                                             <img src="data:image;base64,@item.Product.Photo" alt="Product-IMG" class="cart-item-image w-25 h-25">
+                                        }
+                                        <span class="cart-item-name">@item.Product.Name</span>
+                                   </div>
+                              </td>
+                              <td>@item.Quantity</td>
+                              <td>@item.Product.Price</td>
+                              <td>@(item.Quantity * (item.Product.Price ?? 0))</td>
+                         </tr>
                     }
-               </tbody>
-          </table>
-     </div>
+               }
+          </tbody>
+     </table>
+          
+     <p style="font-size:1.5rem">Total: @(Model.CartItems.Sum(item => (item.Quantity * (item.Product?.Price ?? 0))))$</p>
 
-     <p>Total: @(Model.CartItems.Sum(item => (item.Quantity * (item.Product.Price ?? 0))))</p>
+</div>
 
-     <div>
+
+     <div style="margin-top: 1rem">
           <a href="@Url.Action("Index", "Products")" class="btn btn-secondary">Continue Shopping</a>
           <a href="@Url.Action("Checkout", "Products")" class="btn btn-primary">Proceed to Checkout</a>
      </div>

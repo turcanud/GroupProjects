@@ -10,15 +10,27 @@
           max-width: 450px;
           height: 425px;
      }
+     #row {
+          background-color: rgba(0,0,0,0.75);
+          padding: 1rem;
+     }
+     #row > * {
+          background-color: transparent !important;
+          color:white;
+          
+     }
+     #row img {
+          border-radius: .5rem !important;
+     }
 </style>
 
 <div class="row">
      @foreach (var item in Model)
      {
-          <div class="col-md-4 mb-4">
+          <div id="row" class="col-md-4 mb-4">
                <div class="card">
                     <img src="data:image;base64,@item.Photo" class="card-img-top product-image" alt="Product-IMG">
-                    <div class="card-body">
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: .5rem; ">
                          <h5 class="card-title">@item.Name</h5>
                          <p class="card-text">
                               <strong>Category:</strong> @item.Category <br>
@@ -29,8 +41,8 @@
                          <a href="@Url.Action("Details", "Products", new { id = item.ProductID })" class="btn btn-primary mr-2">Details</a>
                          <form action="@Url.Action("AddToCart", "Products")" method="post" class="d-inline">
                               <input type="hidden" name="productId" value="@item.ProductID" />
-                              <input type="number" name="quantity" value="1" min="1" class="form-control" />
-                              <button type="submit" class="btn btn-success">Add to Cart</button>
+                              <input type="number" name="quantity" value="1" min="1" class="form-control" style="text-align: center; max-width:100%" />
+                              <button style="margin-top: .5rem" type="submit" class="btn btn-success">Add to Cart</button>
                          </form>
                     </div>
                </div>

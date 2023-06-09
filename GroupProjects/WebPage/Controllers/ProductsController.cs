@@ -28,11 +28,6 @@ namespace WebPage.Controllers
                return View(product);
           }
 
-          public ActionResult AddToCart()
-          {
-               return View();
-          }
-
           private Cart GetCartFromSession()
           {
                var cart = Session["Cart"] as Cart;
@@ -85,6 +80,7 @@ namespace WebPage.Controllers
                     else
                     {
                          var cartItem = new CartItem
+
                          {
                               ProductID = productId,
                               Quantity = quantity
@@ -104,7 +100,7 @@ namespace WebPage.Controllers
           public ActionResult Cart()
           {
                var cart = GetCartFromSession();
-
+               Console.WriteLine(cart);
                return View(cart);
           }
 

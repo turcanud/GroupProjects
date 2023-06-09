@@ -1,12 +1,6 @@
 ﻿@model GymSports.Data.Models.GymPlace
 
-@{
-     ViewBag.Title = "Add";
-     Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
-}
-
-
-@using (Html.BeginForm("Create", "Gyms", new { area = "Admin" }, FormMethod.Post))
+@using (Html.BeginForm("Create", "Gyms", new { area = "" }, FormMethod.Post))
 {
      @Html.AntiForgeryToken()
 
@@ -78,5 +72,5 @@
 }
 
 <div class="mt-4">
-     @Html.ActionLink("Back to List", "Index", null, new { area = "Admin", @class = "btn btn-secondary" })
+     @Html.ActionLink("Back to List", "Index", null, new { area = "", @class = "btn btn-secondary" })
 </div>

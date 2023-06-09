@@ -4,9 +4,16 @@
      ViewBag.Title = "Details";
 }
 
+<style>
+     h2, #main {
+          background-color: rgba(0,0,0,0.75);
+          padding: 2rem;
+          border-radius: 1rem;
+     }
+</style>
 <h2 class="text-2xl font-bold mb-4">Details</h2>
 
-<div class="flex justify-center">
+<div id="main" class="flex justify-center">
      <div class="max-w-md bg-gray-900 rounded-lg overflow-hidden shadow-md">
           <div class="bg-gray-800 text-white px-6 py-4">
                <h4 class="text-xl font-bold mb-2">@Model.Name</h4>

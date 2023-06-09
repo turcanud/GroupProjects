@@ -23,18 +23,18 @@
 
                <div class="form-group row">
                     @Html.LabelFor(model => model.Region, htmlAttributes: new { @class = "col-md-2 col-form-label" })
-                    <div class="col-md-10">
+                    <div class="input-group">
+                         <span class="input-group-text"><i class="fas fa-globe"></i></span>
                          @Html.DropDownListFor(model => model.Region, new SelectList(
                              new List<SelectListItem>
                              {
                                  new SelectListItem { Text = "None", Value = "" },
-                                 new SelectListItem { Text = "Buiucani", Value = "Buiucani" },
-                                 new SelectListItem { Text = "Riscani", Value = "Riscani" },
-                                 new SelectListItem { Text = "Ciocana", Value = "Ciocana" },
-                                 new SelectListItem { Text = "Centru", Value = "Centru" },
-                                 new SelectListItem { Text = "Botanica", Value = "Botanica" }
+                                 new SelectListItem { Text = "Buiucani, Alba Iulia 168", Value = "Buiucani, Alba Iulia 168" },
+                                 new SelectListItem { Text = "Riscani, Socoleni 7", Value = "Riscani, Socoleni 7" },
+                                 new SelectListItem { Text = "Ciocana, Dumeniuc 12", Value = "Ciocana, Dumeniuc 12" },
+                                 new SelectListItem { Text = "Cricova, Chișinăului 80", Value = "Cricova, Chișinăului 80" },
+                                 new SelectListItem { Text = "Botanica, Brancuși 3", Value = "Botanica, Brancuși 3" }
                              }, "Value", "Text"), new { @class = "form-control" })
-                         @Html.ValidationMessageFor(model => model.Region, "", new { @class = "text-danger" })
                     </div>
                </div>
 
