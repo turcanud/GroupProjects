@@ -40,6 +40,14 @@ When you click on your name, you can access your profile details, and there is a
 
 ![[qae3.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/qae3.PNG?raw=true)
 
+![[amp1.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/amp1.PNG?raw=true)
+
+![[amp2.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/amp2.PNG?raw=true)
+
+![[amp3.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/amp3.PNG?raw=true)
+
+![[amp4.png]](https://github.com/turcanud/GroupProjects/blob/master/img-pres/amp4.PNG?raw=true)
+
 ## Installation
 
 ```bash
